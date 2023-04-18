@@ -724,20 +724,20 @@ public class RDFImport {
 
   private void checkIndexesExist() throws RDFImportPreRequisitesNotMet {
     Iterable<IndexDefinition> indexes = db.schema().getIndexes();
-    if (missing(indexes.iterator(), "Resource")) {
+    if (missing(indexes.iterator())) {
       throw new RDFImportPreRequisitesNotMet(
           "The following index is required for importing RDF. Please run 'CREATE INDEX ON :Resource(uri)' and try again.");
     }
   }
 
-  private boolean missing(Iterator<IndexDefinition> iterator, String indexLabel) {
+  private boolean missing(Iterator<IndexDefinition> iterator) {
     while (iterator.hasNext()) {
       IndexDefinition indexDef = iterator.next();
-      if (!indexDef.isCompositeIndex() && indexDef.getLabels().iterator().next().name()
-          .equals(indexLabel) &&
-          indexDef.getPropertyKeys().iterator().next().equals("uri")) {
-        return false;
-      }
+        if (!indexDef.isConstraintIndex() && indexDef.getLabel().name()
+                .equals("Resource") &&
+                indexDef.getPropertyKeys().iterator().next().equals("uri")) {
+            return false;
+        }
     }
     return true;
   }
