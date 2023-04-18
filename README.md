@@ -1,25 +1,25 @@
 # neosemantics (semantics)
 ![neosemantics Logo](https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/uploads/nsmntx-logo.png)
-**neosemantics** is a plugin that enables the **use of RDF in Neo4j**. [RDF is a W3C standard model](https://www.w3.org/RDF/) for data interchange.
+**neosemantics** is a plugin that enables the **use of RDF in ONgDB**. [RDF is a W3C standard model](https://www.w3.org/RDF/) for data interchange.
 This effectively means that neosemantics makes it possible to
 
-* **Store RDF data in Neo4j** in a
+* **Store RDF data in ONgDB** in a
 lossless manner (imported RDF can subsequently be exported without losing a single triple in the process).
-* On-demand **export property graph data** from Neo4j *as RDF*.
+* On-demand **export property graph data** from ONgDB *as RDF*.
 
-Other features in NSMNTX include *model mapping* and *inferencing* on Neo4j graphs.
+Other features in NSMNTX include *model mapping* and *inferencing* on ONgDB graphs.
 
 ## ⇨ User Manual and Blog ⇦ 
 
-⇨ Check out the complete **[user manual](https://neo4j.com/docs/labs/nsmntx/current/)** with examples of use. ⇦
+⇨ Check out the complete **[user manual](https://ongdb-contrib.github.io/neosemantics-docs/)** with examples of use. ⇦
 
 ⇨ [Blog on neosemantics](https://jbarrasa.com/category/graph-rdf/) (and more). ⇦
 
 ## Installation
  
-You can either download a prebuilt jar from the [releases area](https://github.com/neo4j-labs/neosemantics/releases) or build it from the source. If you prefer to build, check the note below.
+You can either download a prebuilt jar from the [releases area](https://github.com/ongdb-contrib/neosemantics/releases) or build it from the source. If you prefer to build, check the note below.
 
-1. Copy the  the jar(s) in the <NEO_HOME>/plugins directory of your Neo4j instance. (**note:** If you're going to use the JSON-LD serialisation format for RDF, you'll need to include also [APOC](https://neo4j.com/labs/apoc/))
+1. Copy the  the jar(s) in the <NEO_HOME>/plugins directory of your ONgDB instance. (**note:** If you're going to use the JSON-LD serialisation format for RDF, you'll need to include also [APOC](https://graphfoundation.github.io/ongdb-apoc/))
 2. Add the following line to your <NEO_HOME>/conf/neo4j.conf
 
   ```
@@ -44,7 +44,7 @@ This will produce two jars :
   
 
 ## What's in this repository
-This repository contains a set of stored procedures, user definded functions and extensions sumarised in [the reference section of the user manual](https://neo4j.com/docs/labs/nsmntx/current/reference/).
+This repository contains a set of stored procedures, user definded functions and extensions sumarised in [the reference section of the user manual](https://ongdb-contrib.github.io/neosemantics-docs/#Reference).
 
 ## Contributing
 
